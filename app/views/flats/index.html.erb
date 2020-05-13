@@ -1,0 +1,40 @@
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">AirRyokan</span>
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <p>Our<%= Flat.count %>flats</p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-4">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= flat.name %></h2>
+              <p><%= flat.description %></p>
+            </div>
+            <h2 class="card-trip-pricing">$ <%= flat.price_per_night - flat.number_of_guests%></h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>
